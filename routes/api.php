@@ -24,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/recieved_messages', [HomeController::cl
 Route::middleware('auth:sanctum')->post('/custom_message', [HomeController::class, 'sendCustomMessage']);
 Route::middleware('auth:sanctum')->post('/custom_mail', [HomeController::class, 'sendEmail']);
 Route::post('/auth/register', [UserController::class, 'createUser']);
+Route::get('/list_system_users', [UserController::class, 'show']);
+
 Route::post('/auth/login', [UserController::class, 'loginUser']);
 Route::middleware('auth:sanctum')->put('/user/{id}/update', [UserController::class, 'update']);
 

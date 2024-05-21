@@ -134,7 +134,7 @@ list saved phone numbers
 ```json
 {
     "status": 200,
-    "user_numbers": [
+    "data": [
         {
             "id": 13,
             "added_by": 12,
@@ -206,7 +206,7 @@ sent messages
 
 {
     "status": 200,
-    "messages": [
+    "data": [
         {
             "id": 5,
             "twilio_message_id": "SM4b611b40a2656ac26b0f8c5793cb15f7",
@@ -239,7 +239,7 @@ recieved messages
 
 {
     "status": 200,
-    "messages": [
+    "data": [
         {
             "id": 5,
             "twilio_message_id": "SM4b611b40a2656ac26b0f8c5793cb15f7",
@@ -306,3 +306,35 @@ recieved messages
 {"name":"john updated doe",
 "email":"john3@gmail.com",
 "password":"123456"}
+
+
+
+### 8. list system users
+
+#### Endpoint
+`GET /api/auth/list_system_users`
+
+#### Description
+list system users
+
+#### HTTP Method
+`GET`
+
+#### Headers
+| Key            | Value               |
+|----------------|---------------------|
+| Content-Type   | application/json    |
+| Authorization  | Bearer YOUR_API_KEY |
+
+#### Response Body
+```json
+{
+    "status": 200,
+    "data": [
+        {
+            "id": 12,
+            "name": "john updated doe",
+            "email": "john3@gmail.com"
+        }
+    ]
+}

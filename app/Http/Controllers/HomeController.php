@@ -22,7 +22,7 @@ class HomeController extends Controller
         if ($users->count() > 0) {
             return response()->json([
                 "status" => 200,
-                "user_numbers" => $users
+                "data" => $users
             ], 200);
         } else {
             return response()->json([
@@ -149,7 +149,7 @@ class HomeController extends Controller
         if ($users->count() > 0) {
             return response()->json([
                 "status" => 200,
-                "messages" => $users
+                "data" => $users
             ], 200);
         } else {
             return response()->json([
@@ -173,7 +173,7 @@ class HomeController extends Controller
     if ($messages->count() > 0) {
         return response()->json([
             "status" => 200,
-            "messages" => $messages
+            "data" => $messages
         ], 200);
     } else {
         return response()->json([

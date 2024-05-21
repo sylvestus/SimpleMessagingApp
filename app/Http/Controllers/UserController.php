@@ -11,6 +11,23 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     //
+    public function show()
+    {
+        // $userId = Auth::id();
+        $users = User::select('id', 'name', 'email')->get();
+        if ($users->count() > 0) {
+            return response()->json([
+                "status" => 200,
+                "data" => $users
+            ], 200);
+        } else {
+            return response()->json([
+                "status" => 404,
+                "message" => "No record found"
+            ], 404);
+        }        // view('welcome', compact("users"));
+    }
+
     public function createUser(Request $request)
     {
         try {
